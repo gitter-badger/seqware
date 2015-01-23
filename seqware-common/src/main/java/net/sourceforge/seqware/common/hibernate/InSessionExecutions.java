@@ -4,15 +4,15 @@ import net.sourceforge.seqware.common.factory.BeanFactory;
 import org.hibernate.FlushMode;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.orm.hibernate3.SessionFactoryUtils;
-import org.springframework.orm.hibernate3.SessionHolder;
+import org.springframework.orm.hibernate4.SessionFactoryUtils;
+import org.springframework.orm.hibernate4.SessionHolder;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 /**
  * <p>
  * Abstract InSessionExecutions class.
  * </p>
- * 
+ *
  * @author boconnor
  * @version $Id: $Id
  */
@@ -47,7 +47,7 @@ public abstract class InSessionExecutions {
      */
     public static void bindSessionToThread() {
         sessionFactory = BeanFactory.getSessionFactoryBean();
-        session = SessionFactoryUtils.getSession(sessionFactory, true);
+        session = sessionFactory.getCurrentSession();
         oldMode = session.getFlushMode();
         TransactionSynchronizationManager.bindResource(sessionFactory, new SessionHolder(session));
     }
@@ -56,7 +56,7 @@ public abstract class InSessionExecutions {
      * <p>
      * bindSessionToThread.
      * </p>
-     * 
+     *
      * @param mode
      *            a {@link org.hibernate.FlushMode} object.
      */
@@ -74,14 +74,14 @@ public abstract class InSessionExecutions {
         // session.flush();
         // session.setFlushMode(oldMode);
         TransactionSynchronizationManager.unbindResource(sessionFactory);
-        SessionFactoryUtils.releaseSession(session, sessionFactory);
+        SessionFactoryUtils.closeSession(session);
     }
 
     /**
      * <p>
      * evict.
      * </p>
-     * 
+     *
      * @param o
      *            a {@link java.lang.Object} object.
      */

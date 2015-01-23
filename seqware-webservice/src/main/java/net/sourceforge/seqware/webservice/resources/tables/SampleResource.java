@@ -30,7 +30,7 @@ import net.sourceforge.seqware.common.util.Log;
 import net.sourceforge.seqware.common.util.xmltools.JaxbObject;
 import net.sourceforge.seqware.common.util.xmltools.XmlTools;
 import org.hibernate.Query;
-import org.hibernate.classic.Session;
+import org.hibernate.Session;
 import org.restlet.data.Status;
 import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
@@ -43,7 +43,7 @@ import org.xml.sax.SAXException;
  * <p>
  * SampleResource class.
  * </p>
- * 
+ *
  * @author mtaschuk
  * @version $Id: $Id
  */
@@ -130,7 +130,7 @@ public class SampleResource extends DatabaseResource {
      * <p>
      * postJaxb.
      * </p>
-     * 
+     *
      * @param entity
      *            a {@link org.restlet.representation.Representation} object.
      * @throws org.restlet.resource.ResourceException

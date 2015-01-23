@@ -11,7 +11,7 @@ import org.apache.commons.beanutils.BeanUtilsBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessResourceFailureException;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 /**
  * <p>
@@ -44,7 +44,7 @@ public class WorkflowParamDAOHibernate extends HibernateDaoSupport implements Wo
     @Override
     public void update(WorkflowParam workflowParam) {
         getHibernateTemplate().update(workflowParam);
-        getSession().flush();
+        currentSession().flush();
     }
 
     /** {@inheritDoc} */
@@ -83,7 +83,7 @@ public class WorkflowParamDAOHibernate extends HibernateDaoSupport implements Wo
     private WorkflowParam reattachWorkflowParam(WorkflowParam workflowParam) throws IllegalStateException,
             DataAccessResourceFailureException {
         WorkflowParam dbObject = workflowParam;
-        if (!getSession().contains(workflowParam)) {
+        if (!currentSession().contains(workflowParam)) {
             dbObject = findByID(workflowParam.getWorkflowParamId());
         }
         return dbObject;

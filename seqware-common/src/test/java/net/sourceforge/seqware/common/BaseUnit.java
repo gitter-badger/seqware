@@ -4,13 +4,13 @@ import net.sourceforge.seqware.common.business.RegistrationService;
 import net.sourceforge.seqware.common.factory.BeanFactory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.orm.hibernate3.SessionFactoryUtils;
+import org.springframework.orm.hibernate4.SessionFactoryUtils;
 
 /**
  * <p>
  * BaseUnit class.
  * </p>
- * 
+ *
  * @author boconnor
  * @version $Id: $Id
  * @since 0.13.3
@@ -22,7 +22,7 @@ public class BaseUnit {
      * <p>
      * Constructor for BaseUnit.
      * </p>
-     * 
+     *
      * @throws java.lang.Exception
      *             if any.
      */
@@ -34,12 +34,12 @@ public class BaseUnit {
      * <p>
      * getSession.
      * </p>
-     * 
+     *
      * @return a {@link org.hibernate.Session} object.
      */
     protected Session getSession() {
         SessionFactory sessionFactory = BeanFactory.getSessionFactoryBean();
-        Session session = SessionFactoryUtils.getSession(sessionFactory, true);
+        Session session = sessionFactory.getCurrentSession();
         return session;
     }
 
@@ -47,7 +47,7 @@ public class BaseUnit {
      * <p>
      * removeSession.
      * </p>
-     * 
+     *
      * @param session
      *            a {@link org.hibernate.Session} object.
      */

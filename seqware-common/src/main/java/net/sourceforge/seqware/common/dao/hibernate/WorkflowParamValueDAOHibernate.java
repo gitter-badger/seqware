@@ -11,7 +11,7 @@ import org.apache.commons.beanutils.BeanUtilsBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessResourceFailureException;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 /**
  * <p>
@@ -37,7 +37,7 @@ public class WorkflowParamValueDAOHibernate extends HibernateDaoSupport implemen
     /** {@inheritDoc} */
     @Override
     public Integer insert(WorkflowParamValue workflowParamValue) {
-        // this.getSession().evict(workflowParam.getWorkflow());
+        // this.currentSession().evict(workflowParam.getWorkflow());
         return (Integer) this.getHibernateTemplate().save(workflowParamValue);
     }
 
@@ -45,7 +45,7 @@ public class WorkflowParamValueDAOHibernate extends HibernateDaoSupport implemen
     @Override
     public void update(WorkflowParamValue workflowParamValue) {
         getHibernateTemplate().update(workflowParamValue);
-        getSession().flush();
+        currentSession().flush();
     }
 
     /** {@inheritDoc} */
@@ -141,7 +141,7 @@ public class WorkflowParamValueDAOHibernate extends HibernateDaoSupport implemen
     private WorkflowParamValue reattachWorkflowParamValue(WorkflowParamValue workflowParam) throws IllegalStateException,
             DataAccessResourceFailureException {
         WorkflowParamValue dbObject = workflowParam;
-        if (!getSession().contains(workflowParam)) {
+        if (!currentSession().contains(workflowParam)) {
             dbObject = findByID(workflowParam.getWorkflowParamValueId());
         }
         return dbObject;

@@ -1,63 +1,62 @@
 package net.sourceforge.seqware.common.dao.hibernate;
 
-import java.util.ArrayList;
 import java.util.List;
 import net.sourceforge.seqware.common.dao.ExperimentAttributeDAO;
 import net.sourceforge.seqware.common.model.Experiment;
 import net.sourceforge.seqware.common.model.ExperimentAttribute;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * <p>
  * ExperimentAttributeDAOHibernate class.
  * </p>
- * 
+ *
  * @author boconnor
  * @version $Id: $Id
  */
-public class ExperimentAttributeDAOHibernate extends HibernateDaoSupport implements ExperimentAttributeDAO {
+public class ExperimentAttributeDAOHibernate implements ExperimentAttributeDAO {
+
+    @Autowired
+    private SessionFactory sessionFactory;
+
+    private SessionFactory currentSessionFactory() {
+        return sessionFactory;
+    }
 
     /** {@inheritDoc} */
     @Override
     public void insert(ExperimentAttribute experimentAttribute) {
-        this.getHibernateTemplate().save(experimentAttribute);
+        currentSessionFactory().getCurrentSession().save(experimentAttribute);
 
     }
 
     /** {@inheritDoc} */
     @Override
     public void update(ExperimentAttribute experimentAttribute) {
-        this.getHibernateTemplate().saveOrUpdate(experimentAttribute);
+        currentSessionFactory().getCurrentSession().saveOrUpdate(experimentAttribute);
     }
 
     /** {@inheritDoc} */
     @Override
     public void delete(ExperimentAttribute experimentAttribute) {
-        this.getHibernateTemplate().delete(experimentAttribute);
+        currentSessionFactory().getCurrentSession().delete(experimentAttribute);
     }
 
     /** {@inheritDoc} */
     @Override
     @SuppressWarnings("unchecked")
     public List<ExperimentAttribute> findAll(Experiment experiment) {
-        String query = "from ExperimentAttribute as ea where ea.experiment.experimentId = ?";
-        Object[] parameters = { experiment.getExperimentId() };
-        return this.getHibernateTemplate().find(query, parameters);
+        String queryString = "from ExperimentAttribute as ea where ea.experiment.experimentId = :experimentId";
+        Query query = currentSessionFactory().getCurrentSession().createQuery(queryString);
+        query.setLong("experimentId", experiment.getExperimentId());
+        return query.list();
     }
 
-    /** {@inheritDoc} */
     @Override
     public List<ExperimentAttribute> list() {
-        ArrayList<ExperimentAttribute> eAtts = new ArrayList<>();
-
-        String query = "from ExperimentAttribute";
-
-        List list = this.getHibernateTemplate().find(query);
-
-        for (Object e : list) {
-            eAtts.add((ExperimentAttribute) e);
-        }
-
-        return eAtts;
+        Query query = currentSessionFactory().getCurrentSession().createQuery("from ExperimentAttribute");
+        return query.list();
     }
 }

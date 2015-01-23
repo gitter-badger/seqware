@@ -43,7 +43,7 @@ import org.xml.sax.SAXException;
  * <p>
  * WorkflowRunResource class.
  * </p>
- * 
+ *
  * @author mtaschuk
  * @version $Id: $Id
  */
@@ -109,7 +109,7 @@ public class WorkflowRunResource extends DatabaseResource {
      * <p>
      * postJaxb.
      * </p>
-     * 
+     *
      * @param entity
      *            a {@link org.restlet.representation.Representation} object.
      */
@@ -158,7 +158,7 @@ public class WorkflowRunResource extends DatabaseResource {
      * <p>
      * insertWorkflowRun.
      * </p>
-     * 
+     *
      * @param p
      *            a {@link net.sourceforge.seqware.common.model.WorkflowRun} object.
      * @return a {@link net.sourceforge.seqware.common.model.WorkflowRun} object.

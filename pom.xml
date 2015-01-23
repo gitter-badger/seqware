@@ -23,9 +23,9 @@
         <!-- while merging com.amazonaws.services.s3.transfer.MultipleFileUpload , I couldn't compile without setting a version here -->
         <aws-java-sdk.version>1.8.11</aws-java-sdk.version>
         <jackson.version>1.9.8</jackson.version>
-        <spring.version>3.2.6.RELEASE</spring.version>
-        <hibernate.version>3.6.6.Final</hibernate.version>
-        <hibernate.jpa.version>1.0.1.Final</hibernate.jpa.version>
+        <spring.version>4.1.4.RELEASE</spring.version>
+        <hibernate.version>4.3.5.Final</hibernate.version>
+        <hibernate.jpa.version>1.0.0.Final</hibernate.jpa.version>
         <hibernate-validator.version>4.2.0.Final</hibernate-validator.version>
         <hamcrest.version>1.3</hamcrest.version>
         <beanlib.version>5.0.2beta</beanlib.version>
@@ -463,7 +463,7 @@
             </dependency>
             <dependency>
                 <groupId>org.hibernate.javax.persistence</groupId>
-                <artifactId>hibernate-jpa-2.0-api</artifactId>
+                <artifactId>hibernate-jpa-2.1-api</artifactId>
                 <version>${hibernate.jpa.version}</version>
             </dependency>
             <dependency>

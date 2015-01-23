@@ -8,13 +8,13 @@ import net.sourceforge.seqware.common.model.Registration;
 import net.sourceforge.seqware.common.model.StudyType;
 import net.sourceforge.seqware.common.util.NullBeanUtils;
 import org.apache.commons.beanutils.BeanUtilsBean;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 /**
  * <p>
  * StudyTypeDAOHibernate class.
  * </p>
- * 
+ *
  * @author boconnor
  * @version $Id: $Id
  */
@@ -31,7 +31,7 @@ public class StudyTypeDAOHibernate extends HibernateDaoSupport implements StudyT
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @param studyType
      */
     @Override
@@ -41,7 +41,7 @@ public class StudyTypeDAOHibernate extends HibernateDaoSupport implements StudyT
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @param studyType
      */
     @Override
@@ -62,7 +62,7 @@ public class StudyTypeDAOHibernate extends HibernateDaoSupport implements StudyT
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * Finds an instance of StudyType in the database by the StudyType name.
      */
     @Override
@@ -79,9 +79,9 @@ public class StudyTypeDAOHibernate extends HibernateDaoSupport implements StudyT
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * Finds an instance of StudyType in the database by the StudyType ID.
-     * 
+     *
      * @param expID
      */
     @SuppressWarnings("rawtypes")
