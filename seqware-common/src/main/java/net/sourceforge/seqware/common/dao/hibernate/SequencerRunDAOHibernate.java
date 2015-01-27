@@ -172,13 +172,13 @@ public class SequencerRunDAOHibernate extends HibernateDaoSupport implements Seq
      * Finds an instance of SequencerRun in the database by the SequencerRun ID.
      */
     @Override
-    public SequencerRun findByID(Integer expID) {
-        String query = "from SequencerRun as sequencerRun where sequencerRun.sequencerRunId = ?";
-        SequencerRun sequencerRun = null;
+    public SequencerRunWizardDTO findByID(Integer expID) {
+        String query = "from SequencerRunWizardDTO as sequencerRun where sequencerRun.sequencerRunId = ?";
+        SequencerRunWizardDTO sequencerRun = null;
         Object[] parameters = { expID };
         List list = this.getHibernateTemplate().find(query, parameters);
         if (list.size() > 0) {
-            sequencerRun = (SequencerRun) list.get(0);
+            sequencerRun = (SequencerRunWizardDTO) list.get(0);
         }
         return sequencerRun;
     }
