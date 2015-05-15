@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * This class handles basic database creation.
- * 
+ *
  * @author boconnor
  * @version $Id: $Id
  */
@@ -49,7 +49,7 @@ public class TestDatabaseCreator {
      * <p>
      * createDatabase.
      * </p>
-     * 
+     *
      * @throws java.sql.SQLException
      *             if any.
      */
@@ -62,7 +62,7 @@ public class TestDatabaseCreator {
      * <p>
      * createDatabase.
      * </p>
-     * 
+     *
      * @param loadTestingData
      *            load the provided testing data
      * @throws java.sql.SQLException
@@ -97,7 +97,7 @@ public class TestDatabaseCreator {
 
     /**
      * Convenient method to run a query against the test database, avoids unclosed connections.
-     * 
+     *
      * @param <T>
      * @param h
      * @param query
@@ -111,7 +111,7 @@ public class TestDatabaseCreator {
 
     /**
      * Run an insert, update, or delete
-     * 
+     *
      * @param query
      * @param params
      * @return
@@ -128,7 +128,7 @@ public class TestDatabaseCreator {
 
     /**
      * Convenient method to run a query against the test database, avoids unclosed connections.
-     * 
+     *
      * @param <T>
      * @param h
      * @param query
@@ -160,7 +160,7 @@ public class TestDatabaseCreator {
      * <p>
      * dropDatabase.
      * </p>
-     * 
+     *
      * @throws java.sql.SQLException
      *             if any.
      */
@@ -175,7 +175,7 @@ public class TestDatabaseCreator {
 
     /**
      * Drop a database schema even when users are connected to it
-     * 
+     *
      * @throws java.sql.SQLException
      *             if any.
      */
@@ -312,7 +312,7 @@ public class TestDatabaseCreator {
 
     /**
      * Unfortunately, postgres does not allow the straight dropdb and createdb when tomcat is used (perhaps we leave open a connection)
-     * 
+     *
      * @param loadTestingData
      */
     protected void basicResetDatabaseWithUsers(boolean loadTestingData) {
@@ -321,7 +321,7 @@ public class TestDatabaseCreator {
             TestDatabaseCreator.markDatabaseChanged();
             this.createDatabase(loadTestingData);
         } catch (SQLException e) {
-            throw new RuntimeException();
+            throw new RuntimeException(e);
         }
     }
 }
