@@ -1,6 +1,14 @@
 <FindBugsFilter>
      <Match>
-	     <!-- we don't use windows -->
+     <!-- conflicts with GSON's use of TypeTokens -->
+       <Bug pattern="UMAC_UNCALLABLE_METHOD_OF_ANONYMOUS_CLASS" />
+     </Match>
+     <Match>
+     <!-- conflicts with GSON's use of TypeTokens -->
+       <Bug pattern="SE_BAD_FIELD_INNER_CLASS" />
+     </Match>
+     <Match>
+     <!-- we don't use windows -->
        <Bug code="RE_CANT_USE_FILE_SEPARATOR_AS_REGULAR_EXPRESSION" />
      </Match>
 </FindBugsFilter>

@@ -1283,7 +1283,7 @@
                     <xmlOutput>true</xmlOutput>
                     <threshold>High</threshold>
                     <excludeFilterFile>
-                        ${project.parent.basedir}/findbugs-exclude.xml
+                        ${project.basedir}/findbugs-exclude.xml
                     </excludeFilterFile>
                     <skip>${skipTests}</skip>
                 </configuration>
