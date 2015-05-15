@@ -183,6 +183,12 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>net.sourceforge.cobertura</groupId>
+                <artifactId>cobertura</artifactId>
+                <version>2.1.1</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>3.3.2</version>
@@ -771,6 +777,14 @@
         </dependencies>
     </dependencyManagement>
 
+    <dependencies>
+        <dependency>
+            <groupId>net.sourceforge.cobertura</groupId>
+            <artifactId>cobertura</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -904,12 +918,12 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>cobertura-maven-plugin</artifactId>
                     <version>2.7</version>
-		    <configuration>
+                    <configuration>
                         <formats>
                             <format>xml</format>
                             <format>html</format>
                         </formats>
-                    <aggregate>true</aggregate>
+                        <aggregate>true</aggregate>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -1259,12 +1273,12 @@
                     <xmlOutput>true</xmlOutput>
                     <threshold>High</threshold>
                     <excludeFilterFile>
-			    ${project.parent.basedir}/findbugs-exclude.xml
+                        ${project.parent.basedir}/findbugs-exclude.xml
                     </excludeFilterFile>
                     <skip>${skipTests}</skip>
                 </configuration>
             </plugin>
-	    <plugin>
+            <plugin>
                 <groupId>org.eluder.coveralls</groupId>
                 <artifactId>coveralls-maven-plugin</artifactId>
                 <version>3.1.0</version>
