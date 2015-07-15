@@ -311,6 +311,14 @@
             </exclusions>
         </dependency>
         <dependency>
+            <groupId>com.github.seqware</groupId>
+            <artifactId>seqware-minimal</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.seqware</groupId>
+            <artifactId>seqware-pipeline-client</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <exclusions>

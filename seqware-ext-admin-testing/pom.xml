@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent> 
-        <version>1.2.0-alpha.0-SNAPSHOT</version> 
-        <groupId>com.github.seqware</groupId> 
-        <artifactId>seqware</artifactId> 
-        <relativePath>../pom.xml</relativePath> 
+    <parent>
+        <version>1.2.0-alpha.0-SNAPSHOT</version>
+        <groupId>com.github.seqware</groupId>
+        <artifactId>seqware</artifactId>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>seqware-ext-admin-testing</artifactId>
@@ -33,7 +33,7 @@
         </dependency>
         <dependency>
             <groupId>com.github.seqware</groupId>
-            <artifactId>seqware-common</artifactId>
+            <artifactId>seqware-minimal</artifactId>
             <type>jar</type>
         </dependency>
         <dependency>
@@ -71,7 +71,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+
     <build>
         <resources>
             <resource>
@@ -84,7 +84,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
-			
+
                 <configuration>
                     <systemPropertyVariables>
                         <cliPath>${project.parent.basedir}/seqware-pipeline/target/seqware</cliPath>
@@ -148,18 +148,18 @@
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin> 
+                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <version>${maven-failsafe-plugin.version}</version>
-			
+
                         <configuration>
                             <systemPropertyVariables>
                                 <cliPath>${project.parent.basedir}/seqware-pipeline/target/seqware</cliPath>
                             </systemPropertyVariables>
                         </configuration>
-                        
+
                         <executions>
                             <execution>
                                 <id>integration-test</id>
@@ -174,7 +174,7 @@
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin>                     
+                    </plugin>
                 </plugins>
             </build>
         </profile>

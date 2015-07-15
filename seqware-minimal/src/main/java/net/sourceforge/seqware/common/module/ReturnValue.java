@@ -8,11 +8,11 @@ import java.util.Map;
 import net.sourceforge.seqware.common.util.Log;
 
 /**
- * 
+ *
  * Return values > 0 are errors that will cause the runner to exit. Return of 0 implies success and the runner will continue, assuming all
  * is well. Return of -1 implies the method was not implemented for that module, AND IS NOT AN ERROR!!! By default the runner will continue
  * on with steps as if it succeeded!
- * 
+ *
  * @author boconnor
  * @version $Id: $Id
  */
@@ -154,7 +154,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Setter for the field <code>attributes</code>.
      * </p>
-     * 
+     *
      * @param attributes
      *            a {@link java.util.Map} object.
      */
@@ -167,7 +167,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * setAttribute.
      * </p>
-     * 
+     *
      * @param key
      *            a {@link java.lang.String} object.
      * @param value
@@ -184,7 +184,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Getter for the field <code>attributes</code>.
      * </p>
-     * 
+     *
      * @return a {@link java.util.Map} object.
      */
     public Map<String, String> getAttributes() {
@@ -198,7 +198,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * getAttribute.
      * </p>
-     * 
+     *
      * @param key
      *            a {@link java.lang.String} object.
      * @return a {@link java.lang.String} object.
@@ -214,7 +214,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Getter for the field <code>runStartTstmp</code>.
      * </p>
-     * 
+     *
      * @return a {@link java.util.Date} object.
      */
     public Date getRunStartTstmp() {
@@ -225,7 +225,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Setter for the field <code>runStartTstmp</code>.
      * </p>
-     * 
+     *
      * @param runStartTstmp
      *            a {@link java.util.Date} object.
      */
@@ -237,7 +237,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Getter for the field <code>runStopTstmp</code>.
      * </p>
-     * 
+     *
      * @return a {@link java.util.Date} object.
      */
     public Date getRunStopTstmp() {
@@ -248,7 +248,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Setter for the field <code>runStopTstmp</code>.
      * </p>
-     * 
+     *
      * @param runStopTstmp
      *            a {@link java.util.Date} object.
      */
@@ -260,7 +260,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Getter for the field <code>returnValue</code>.
      * </p>
-     * 
+     *
      * @return a int.
      */
     public int getReturnValue() {
@@ -271,7 +271,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Setter for the field <code>returnValue</code>.
      * </p>
-     * 
+     *
      * @param returnValue
      *            a int.
      */
@@ -283,7 +283,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * featureNotImplemented.
      * </p>
-     * 
+     *
      * @return a {@link net.sourceforge.seqware.common.module.ReturnValue} object.
      */
     public static ReturnValue featureNotImplemented() {
@@ -294,7 +294,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Getter for the field <code>processExitStatus</code>.
      * </p>
-     * 
+     *
      * @return a int.
      */
     public int getProcessExitStatus() {
@@ -305,7 +305,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Setter for the field <code>processExitStatus</code>.
      * </p>
-     * 
+     *
      * @param processExitStatus
      *            a int.
      */
@@ -317,7 +317,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Getter for the field <code>stdout</code>.
      * </p>
-     * 
+     *
      * @return a {@link java.lang.String} object.
      */
     public String getStdout() {
@@ -328,7 +328,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Getter for the field <code>stderr</code>.
      * </p>
-     * 
+     *
      * @return a {@link java.lang.String} object.
      */
     public String getStderr() {
@@ -339,7 +339,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Getter for the field <code>exitStatus</code>.
      * </p>
-     * 
+     *
      * @return a int.
      */
     public int getExitStatus() {
@@ -350,7 +350,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Setter for the field <code>exitStatus</code>.
      * </p>
-     * 
+     *
      * @param exitStatus
      *            a int.
      */
@@ -362,7 +362,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Setter for the field <code>stdout</code>.
      * </p>
-     * 
+     *
      * @param stdout
      *            a {@link java.lang.String} object.
      */
@@ -374,7 +374,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Setter for the field <code>stderr</code>.
      * </p>
-     * 
+     *
      * @param stderr
      *            a {@link java.lang.String} object.
      */
@@ -386,7 +386,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Getter for the field <code>algorithm</code>.
      * </p>
-     * 
+     *
      * @return a {@link java.lang.String} object.
      */
     public String getAlgorithm() {
@@ -397,7 +397,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Setter for the field <code>algorithm</code>.
      * </p>
-     * 
+     *
      * @param algorithm
      *            a {@link java.lang.String} object.
      */
@@ -409,7 +409,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Getter for the field <code>description</code>.
      * </p>
-     * 
+     *
      * @return a {@link java.lang.String} object.
      */
     public String getDescription() {
@@ -420,7 +420,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Setter for the field <code>description</code>.
      * </p>
-     * 
+     *
      * @param description
      *            a {@link java.lang.String} object.
      */
@@ -432,7 +432,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Getter for the field <code>version</code>.
      * </p>
-     * 
+     *
      * @return a {@link java.lang.String} object.
      */
     public String getVersion() {
@@ -443,7 +443,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Setter for the field <code>version</code>.
      * </p>
-     * 
+     *
      * @param version
      *            a {@link java.lang.String} object.
      */
@@ -455,7 +455,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Getter for the field <code>parameters</code>.
      * </p>
-     * 
+     *
      * @return a {@link java.lang.String} object.
      */
     public String getParameters() {
@@ -466,7 +466,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Setter for the field <code>parameters</code>.
      * </p>
-     * 
+     *
      * @param parameters
      *            a {@link java.lang.String} object.
      */
@@ -491,7 +491,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Constructor for ReturnValue.
      * </p>
-     * 
+     *
      * @param startExitStatus
      *            a int.
      */
@@ -506,7 +506,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Constructor for ReturnValue.
      * </p>
-     * 
+     *
      * @param exitStatus
      */
     public ReturnValue(ExitStatus exitStatus) {
@@ -520,7 +520,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Constructor for ReturnValue.
      * </p>
-     * 
+     *
      * @param startStdout
      *            a {@link java.lang.String} object.
      * @param startStderr
@@ -539,7 +539,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Getter for the field <code>files</code>.
      * </p>
-     * 
+     *
      * @return a {@link java.util.ArrayList} object.
      */
     public ArrayList<FileMetadata> getFiles() {
@@ -550,7 +550,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Setter for the field <code>files</code>.
      * </p>
-     * 
+     *
      * @param files
      *            a {@link java.util.ArrayList} object.
      */
@@ -563,7 +563,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * printAndAppendtoStderr.
      * </p>
-     * 
+     *
      * @param errorMessage
      *            a {@link java.lang.String} object.
      */
@@ -586,7 +586,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * printAndAppendtoStdout.
      * </p>
-     * 
+     *
      * @param outMessage
      *            a {@link java.lang.String} object.
      */
@@ -608,7 +608,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Getter for the field <code>url</code>.
      * </p>
-     * 
+     *
      * @return a {@link java.lang.String} object.
      */
     public String getUrl() {
@@ -619,7 +619,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Setter for the field <code>url</code>.
      * </p>
-     * 
+     *
      * @param url
      *            a {@link java.lang.String} object.
      */
@@ -631,7 +631,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Getter for the field <code>urlLabel</code>.
      * </p>
-     * 
+     *
      * @return a {@link java.lang.String} object.
      */
     public String getUrlLabel() {
@@ -642,7 +642,7 @@ public class ReturnValue implements Serializable {
      * <p>
      * Setter for the field <code>urlLabel</code>.
      * </p>
-     * 
+     *
      * @param urlLabel
      *            a {@link java.lang.String} object.
      */

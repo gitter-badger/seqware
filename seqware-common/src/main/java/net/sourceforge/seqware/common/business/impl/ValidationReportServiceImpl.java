@@ -2,9 +2,8 @@ package net.sourceforge.seqware.common.business.impl;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import java.util.List;
-import java.util.Set;
+import net.sourceforge.seqware.common.business.ReportEntry;
 import net.sourceforge.seqware.common.business.ValidationReportService;
 import net.sourceforge.seqware.common.dao.FileDAO;
 import net.sourceforge.seqware.common.model.Experiment;
@@ -108,7 +107,8 @@ public class ValidationReportServiceImpl implements ValidationReportService {
         if (workflowRun != null) {
             Workflow workflow = workflowRun.getWorkflow();
             if (workflow != null) {
-                sb.append(indent(in++)).append("WORKFLOW ").append(workflow.getFullName()).append(" SWA: ").append(workflow.getSwAccession());
+                sb.append(indent(in++)).append("WORKFLOW ").append(workflow.getFullName()).append(" SWA: ")
+                        .append(workflow.getSwAccession());
                 sb.append('\n');
                 result = true;
             }
@@ -118,7 +118,7 @@ public class ValidationReportServiceImpl implements ValidationReportService {
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @param swa
      */
     @Override
@@ -127,7 +127,8 @@ public class ValidationReportServiceImpl implements ValidationReportService {
         StringBuilder sb = new StringBuilder();
         int in = 0;
         File file = fileDao.findBySWAccession(swa);
-        sb.append(indent(in++)).append("FILE SWA: ").append(file.getSwAccession()).append(" FILE NAME: ").append(file.getFileName()).append(" Processing Children: ").append(file.getProcessings().size());
+        sb.append(indent(in++)).append("FILE SWA: ").append(file.getSwAccession()).append(" FILE NAME: ").append(file.getFileName())
+                .append(" Processing Children: ").append(file.getProcessings().size());
         sb.append("\n");
         for (Processing process : file.getProcessings()) {
             visitProcessing(process, in, sb);
@@ -211,97 +212,4 @@ public class ValidationReportServiceImpl implements ValidationReportService {
         }
     }
 
-    public class ReportEntry {
-        private String filename;
-        private String fileSwa;
-        private String rootProcessingName;
-        private String rootProcessingSwa;
-        private Set<String> sequencerRunSwas = Sets.newHashSet();
-        private Set<String> laneSwas = Sets.newHashSet();
-        private Set<String> iusSwas = Sets.newHashSet();
-        private Set<String> sampleSwas = Sets.newHashSet();
-        private Set<String> experimentSwas = Sets.newHashSet();
-        private Set<String> studySwas = Sets.newHashSet();
-
-        public String getFilename() {
-            return filename;
-        }
-
-        public void setFilename(String filename) {
-            this.filename = filename;
-        }
-
-        public String getFileSwa() {
-            return fileSwa;
-        }
-
-        public void setFileSwa(String fileSwa) {
-            this.fileSwa = fileSwa;
-        }
-
-        public String getRootProcessingName() {
-            return rootProcessingName;
-        }
-
-        public void setRootProcessingName(String rootProcessingName) {
-            this.rootProcessingName = rootProcessingName;
-        }
-
-        public String getRootProcessingSwa() {
-            return rootProcessingSwa;
-        }
-
-        public void setRootProcessingSwa(String rootProcessingSwa) {
-            this.rootProcessingSwa = rootProcessingSwa;
-        }
-
-        public Set<String> getSequencerRunSwas() {
-            return sequencerRunSwas;
-        }
-
-        public void setSequencerRunSwas(Set<String> sequencerRunSwas) {
-            this.sequencerRunSwas = sequencerRunSwas;
-        }
-
-        public Set<String> getLaneSwas() {
-            return laneSwas;
-        }
-
-        public void setLaneSwas(Set<String> laneSwas) {
-            this.laneSwas = laneSwas;
-        }
-
-        public Set<String> getIusSwas() {
-            return iusSwas;
-        }
-
-        public void setIusSwas(Set<String> iusSwas) {
-            this.iusSwas = iusSwas;
-        }
-
-        public Set<String> getSampleSwas() {
-            return sampleSwas;
-        }
-
-        public void setSampleSwas(Set<String> sampleSwas) {
-            this.sampleSwas = sampleSwas;
-        }
-
-        public Set<String> getExperimentSwas() {
-            return experimentSwas;
-        }
-
-        public void setExperimentSwas(Set<String> experimentSwas) {
-            this.experimentSwas = experimentSwas;
-        }
-
-        public Set<String> getStudySwas() {
-            return studySwas;
-        }
-
-        public void setStudySwas(Set<String> studySwas) {
-            this.studySwas = studySwas;
-        }
-
-    }
 }

@@ -23,9 +23,9 @@ import net.sourceforge.seqware.pipeline.bundle.Bundle;
 /**
  * a utils class for creating the AbstractWorkflowDataModel, by reading the metadata.xml file, will load a Java based objectModel or XML-
  * based ObjectModel
- * 
+ *
  * @author yliang
- * 
+ *
  */
 public class WorkflowDataModelFactory {
 
@@ -34,7 +34,7 @@ public class WorkflowDataModelFactory {
 
     /**
      * This constructs the factory with only the parameters which shouldn't change from workflow to workflow.
-     * 
+     *
      * @param config
      *            config generated from the .seqware/settings
      * @param metadata
@@ -46,9 +46,9 @@ public class WorkflowDataModelFactory {
 
     /**
      * load metadata.xml and load the class.
-     * 
+     *
      * This method still needs work because it requires a lot of parameters which
-     * 
+     *
      * @param bundlePath
      * @param workflowAccession
      * @param workflowRunAccession
@@ -225,12 +225,12 @@ public class WorkflowDataModelFactory {
     /**
      * I'm copying this from BasicWorkflow since I don't know if the package net.sourceforge.seqware.pipeline.workflow will be removed or if
      * all the workflowV2 will be merged.
-     * 
+     *
      * This code will either copy or download from S3, unzip, and return unzip location.
-     * 
+     *
      * It's used when the local workflow bundle dir is null or doesn't exist which is a sign that the workflow bundle should be retrieved
      * from the permanent location
-     * 
+     *
      * @param permLoc
      * @return
      */
@@ -253,7 +253,7 @@ public class WorkflowDataModelFactory {
     /**
      * This method is badly named now. There are no command-line options if we always schedule. Instead we only need to retain the process
      * of getting information from the DB into the workflow data model so that we can use it.
-     * 
+     *
      * @param model
      * @param workflowAccession
      * @param workflowRunAccession
@@ -307,7 +307,7 @@ public class WorkflowDataModelFactory {
 
     /**
      * reads a map and tries to find the parent accessions, the result is de-duplicated.
-     * 
+     *
      * @param map
      * @return
      */

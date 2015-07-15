@@ -24,7 +24,7 @@ import org.apache.commons.io.filefilter.TrueFileFilter;
 
 /**
  * This is a utility class that lets you manipulate a workflow bundle.
- * 
+ *
  * @author briandoconnor@gmail.com
  * @version $Id: $Id
  */
@@ -52,7 +52,7 @@ public class Bundle {
      * <p>
      * Constructor for Bundle.
      * </p>
-     * 
+     *
      * @param metadata
      *            a {@link net.sourceforge.seqware.common.metadata.Metadata} object.
      * @param config
@@ -88,7 +88,7 @@ public class Bundle {
      * <p>
      * getBundleInfo.
      * </p>
-     * 
+     *
      * @param bundle
      *            a {@link java.io.File} object.
      * @param metadataFile
@@ -138,7 +138,7 @@ public class Bundle {
      * <p>
      * unpackageBundle.
      * </p>
-     * 
+     *
      * @param bundle
      *            a {@link java.io.File} object.
      * @return a {@link net.sourceforge.seqware.common.module.ReturnValue} object.
@@ -191,7 +191,7 @@ public class Bundle {
      * <p>
      * unpackageBundleFromS3.
      * </p>
-     * 
+     *
      * @param bundleURL
      *            a {@link java.lang.String} object.
      * @return a {@link net.sourceforge.seqware.common.module.ReturnValue} object.
@@ -259,7 +259,7 @@ public class Bundle {
      * <p>
      * packageBundle.
      * </p>
-     * 
+     *
      * @param bundlePath
      *            a {@link java.io.File} object.
      * @param bundleOutput
@@ -304,7 +304,7 @@ public class Bundle {
      * <p>
      * packageBundleToS3.
      * </p>
-     * 
+     *
      * @param bundlePath
      *            a {@link java.io.File} object.
      * @param bundleOutputPrefix
@@ -372,7 +372,7 @@ public class Bundle {
      * <p>
      * copyBundleToS3.
      * </p>
-     * 
+     *
      * @param bundle
      *            a {@link java.io.File} object.
      * @param bundleOutputPrefix
@@ -415,7 +415,7 @@ public class Bundle {
      * <p>
      * copyBundle.
      * </p>
-     * 
+     *
      * @param sourceFile
      *            a {@link java.lang.String} object.
      * @param targetDir
@@ -442,7 +442,7 @@ public class Bundle {
      * <p>
      * validateBundle.
      * </p>
-     * 
+     *
      * @param bundle
      *            a {@link java.io.File} object.
      * @return a {@link net.sourceforge.seqware.common.module.ReturnValue} object.
@@ -502,7 +502,7 @@ public class Bundle {
      * <p>
      * installBundleZipOnly.
      * </p>
-     * 
+     *
      * @param bundle
      *            a {@link java.io.File} object.
      * @param metadataFile
@@ -518,7 +518,7 @@ public class Bundle {
      * <p>
      * installBundleDirOnly.
      * </p>
-     * 
+     *
      * @param bundle
      *            a {@link java.io.File} object.
      * @param metadataFile
@@ -534,7 +534,7 @@ public class Bundle {
      * <p>
      * installBundle.
      * </p>
-     * 
+     *
      * @param bundle
      *            a {@link java.io.File} object.
      * @param metadataFile
@@ -558,7 +558,7 @@ public class Bundle {
     /**
      * This method allows you to install the workflow bundle to the metadb optionally building a zip file along the way and archiving it to
      * a safe location.
-     * 
+     *
      * @param bundle
      *            a {@link java.io.File} object.
      * @param metadataFile
@@ -666,7 +666,7 @@ public class Bundle {
      * <p>
      * Getter for the field <code>metadata</code>.
      * </p>
-     * 
+     *
      * @return a {@link net.sourceforge.seqware.common.metadata.Metadata} object.
      */
     public Metadata getMetadata() {
@@ -677,7 +677,7 @@ public class Bundle {
      * <p>
      * Setter for the field <code>metadata</code>.
      * </p>
-     * 
+     *
      * @param metadata
      *            a {@link net.sourceforge.seqware.common.metadata.Metadata} object.
      */
@@ -689,7 +689,7 @@ public class Bundle {
      * <p>
      * Getter for the field <code>outputDir</code>.
      * </p>
-     * 
+     *
      * @return a {@link java.lang.String} object.
      */
     public String getOutputDir() {
@@ -700,7 +700,7 @@ public class Bundle {
      * <p>
      * Setter for the field <code>outputDir</code>.
      * </p>
-     * 
+     *
      * @param outputDir
      *            a {@link java.lang.String} object.
      */
@@ -712,7 +712,7 @@ public class Bundle {
      * <p>
      * Getter for the field <code>filesArray</code>.
      * </p>
-     * 
+     *
      * @return a {@link java.util.ArrayList} object.
      */
     public ArrayList<File> getFilesArray() {
@@ -723,7 +723,7 @@ public class Bundle {
      * <p>
      * Setter for the field <code>filesArray</code>.
      * </p>
-     * 
+     *
      * @param filesArray
      *            a {@link java.util.ArrayList} object.
      */

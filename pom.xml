@@ -154,7 +154,9 @@
 
     <modules>
         <module>seqware-meta-db</module>
+        <module>seqware-minimal</module>
         <module>seqware-common</module>
+        <module>seqware-pipeline-client</module>
         <module>seqware-pipeline</module>
         <module>seqware-admin-webservice</module>
         <module>seqware-ext-admin-testing</module>
@@ -262,6 +264,16 @@
             <dependency>
                 <groupId>com.github.seqware</groupId>
                 <artifactId>seqware-meta-db</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.seqware</groupId>
+                <artifactId>seqware-minimal</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.seqware</groupId>
+                <artifactId>seqware-pipeline-client</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

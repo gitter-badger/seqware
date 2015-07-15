@@ -32,6 +32,14 @@
         </dependency>
         <dependency>
             <groupId>com.github.seqware</groupId>
+            <artifactId>seqware-minimal</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.seqware</groupId>
+            <artifactId>seqware-pipeline-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.seqware</groupId>
             <artifactId>seqware-webservice</artifactId>
             <type>war</type>
             <scope>test</scope>

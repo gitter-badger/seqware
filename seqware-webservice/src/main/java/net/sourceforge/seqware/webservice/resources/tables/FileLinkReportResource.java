@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import net.sourceforge.seqware.common.business.ValidationReportService;
-import net.sourceforge.seqware.common.business.impl.ValidationReportServiceImpl.ReportEntry;
+import net.sourceforge.seqware.common.business.ReportEntry;
 import net.sourceforge.seqware.common.factory.BeanFactory;
 import org.restlet.representation.Representation;
 import org.restlet.representation.StringRepresentation;
