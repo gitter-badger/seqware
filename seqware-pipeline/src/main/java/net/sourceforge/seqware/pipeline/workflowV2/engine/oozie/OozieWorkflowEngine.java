@@ -22,7 +22,7 @@ import org.apache.oozie.client.WorkflowJob.Status;
 
 /**
  * This is the implementation of the WorkflowEngine with a Oozie back-end.
- * 
+ *
  * @author dyuen
  */
 public class OozieWorkflowEngine implements WorkflowEngine {
@@ -38,7 +38,7 @@ public class OozieWorkflowEngine implements WorkflowEngine {
     private final Path hdfsWorkDir;
 
     /**
-     * 
+     *
      * @param objectModel
      * @param useSge
      * @param threadsSgeParamFormat
@@ -104,7 +104,8 @@ public class OozieWorkflowEngine implements WorkflowEngine {
     }
 
     private static String seqwareJarPath(AbstractWorkflowDataModel objectModel) {
-        return objectModel.getWorkflowBaseDir() + "/lib/seqware-distribution-" + objectModel.getTags().get("seqware_version") + "-full.jar";
+        return objectModel.getWorkflowBaseDir() + "/lib/seqware-distribution-" + objectModel.getTags().get("seqware_version")
+                + "-client.jar";
     }
 
     @Override
@@ -237,7 +238,7 @@ public class OozieWorkflowEngine implements WorkflowEngine {
 
     /**
      * @throws IOException
-     * 
+     *
      */
     private void populateNfsWorkDir() {
         try {
@@ -264,7 +265,7 @@ public class OozieWorkflowEngine implements WorkflowEngine {
 
     /**
      * return a workflow.xml for hadoop
-     * 
+     *
      * @param objectModel
      * @return
      */

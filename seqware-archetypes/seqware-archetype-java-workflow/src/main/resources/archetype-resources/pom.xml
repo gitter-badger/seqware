@@ -50,7 +50,7 @@
             <groupId>com.github.seqware</groupId>
             <artifactId>seqware-distribution</artifactId>
             <version>${seqware-version}</version>
-            <classifier>full</classifier>
+            <classifier>client</classifier>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -199,7 +199,7 @@
                                     <groupId>com.github.seqware</groupId>
                                     <artifactId>seqware-distribution</artifactId>
                                     <version>${seqware-version}</version>
-                                    <classifier>full</classifier>
+                                    <classifier>client</classifier>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${workflow-dir}/lib</outputDirectory>
                                 </artifactItem>
@@ -248,7 +248,7 @@
                         <configuration>
                             <skip>${skipITs}</skip>
                             <executable>${workflow-dir}/bin/jre1.6.0_29/bin/java</executable>
-                            <commandlineArgs>-jar ${workflow-dir}/lib/seqware-distribution-${seqware-version}-full.jar --plugin net.sourceforge.seqware.pipeline.plugins.BundleManager -- -t -b ${project.build.directory}/${workflow-full-name}/ </commandlineArgs>
+                            <commandlineArgs>-jar ${workflow-dir}/lib/seqware-distribution-${seqware-version}-client.jar --plugin net.sourceforge.seqware.pipeline.plugins.BundleManager -- -t -b ${project.build.directory}/${workflow-full-name}/ </commandlineArgs>
                         </configuration>
                     </execution>
                 </executions>

@@ -102,7 +102,8 @@ public class WhiteStarWorkflowEngine implements WorkflowEngine {
     }
 
     private static String seqwareJarPath(AbstractWorkflowDataModel objectModel) {
-        return objectModel.getWorkflowBaseDir() + "/lib/seqware-distribution-" + objectModel.getTags().get("seqware_version") + "-full.jar";
+        return objectModel.getWorkflowBaseDir() + "/lib/seqware-distribution-" + objectModel.getTags().get("seqware_version")
+                + "-client.jar";
     }
 
     @Override
